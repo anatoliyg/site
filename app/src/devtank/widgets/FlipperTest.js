@@ -14,8 +14,8 @@ define(function(require, exports, module){
     var Slider = require('famous/widgets/Slider');
     var Flipper = require('famous/views/Flipper');
     var Utility = require('famous/utilities/Utility');
-    var CubesView = require('myshit/CubesView');
-    var Cube = require('myshit/Cube');
+    // var CubesView = require('widgets/CubesView');
+    // var Cube = require('widgets/Cube');
     
 
 

@@ -8,9 +8,9 @@ require.config({
         requirejs: '../lib/requirejs/require',
         almond: '../lib/almond/almond',
         'famous-polyfills': '../lib/famous-polyfills/index',
-        myshit: '../src/myshit',
+        widgets: '../src/devtank/widgets',
         arbor: '../lib/arbor'
-   
+
     }
 });
 require(['main']);

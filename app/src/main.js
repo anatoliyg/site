@@ -2,49 +2,52 @@
 define(function(require, exports, module) {
     'use strict';
     // import dependencies
-    var Engine = require('famous/core/Engine');
-    var Surface = require('famous/core/Surface');
-    var Modifier = require('famous/core/Modifier');
-    var Transform = require('famous/core/Transform');
-    //var MainView = require('myshit/mainView');
-    var CiaPanel = require('myshit/CiaPanel');
-    var FlipperTest = require('myshit/FlipperTest');
-    var GenericSync = require('famous/inputs/GenericSync');
-    var MouseSync = require('famous/inputs/MouseSync');
-    var TouchSync   = require("famous/inputs/TouchSync");
-    var ScrollSync  = require("famous/inputs/ScrollSync");
-    var ArborGraph  = require('myshit/ArborGraph');
+    var Engine              = require('famous/core/Engine');
+    var Surface             = require('famous/core/Surface');
+    var Modifier            = require('famous/core/Modifier');
+    var Transform           = require('famous/core/Transform');
+    //var MainView = require('widgets/mainView');
+    var CiaPanel            = require('widgets/CiaPanel');
+    var FlipperTest         = require('widgets/FlipperTest');
+    var GenericSync         = require('famous/inputs/GenericSync');
+    var MouseSync           = require('famous/inputs/MouseSync');
+    var TouchSync           = require("famous/inputs/TouchSync");
+    var ScrollSync          = require("famous/inputs/ScrollSync");
+    var ArborGraph          = require('widgets/ArborGraph');
     var StateModifier       = require('famous/modifiers/StateModifier');
     var Easing              = require('famous/transitions/Easing');
+    var SpinningSphere      = require('widgets/SpinningSphere');
 
     // create the main context
     var mainContext = Engine.createContext();
     mainContext.setPerspective(1000);
 
+
+    ///CIA PANEL TEST
+    /*
+    var ciaPanel = new CiaPanel(800, 600);
     
 
+    
+    coreNode.add(ciaPanel.getPanel());
+    */
 
-
-        
-    var ciaPanel = new CiaPanel(800, 600);
     var coreModifier = new Modifier({
         opacity: 1,
         origin: [0.5, 0.5]
     });
 
     var coreNode = mainContext.add(coreModifier);
-    //coreNode.add(ciaPanel.getPanel());
 
 
-
-    var arborMod = new StateModifier({
+    var shpereMod = new StateModifier({
         origin: [0.5, 0.5],
         opacity: 1, 
         transform: Transform.translate(0, 0, 0)
     });
 
-    var arborGraph = new ArborGraph([900, 520]);
-    coreNode.add(arborMod).add(arborGraph);
+    var sphere = new SpinningSphere([900, 520]);
+    coreNode.add(shpereMod).add(sphere);
 
     //  arborMod.setOpacity(
     //     0,
@@ -56,7 +59,7 @@ define(function(require, exports, module) {
 
 
 
-    arborGraph.on('click', function(){
+    sphere.on('click', function(){
 
         arborMod.setTransform(
             Transform.translate(0, 0, 0),
@@ -65,17 +68,17 @@ define(function(require, exports, module) {
                 curve: Easing.inOutBack
             }
             
-        )
+            )
     })
 
 
-    var arborMod2 = new Modifier({
-        origin: [1, 1],
-        opacity: 1
+    // var arborMod2 = new Modifier({
+    //     origin: [1, 1],
+    //     opacity: 1
 
-    });
+    // });
 
-    var arborGraph2 = new ArborGraph([300, 300], 'graph2');
+    //var arborGraph2 = new ArborGraph([300, 300], 'graph2');
     //coreNode.add(arborMod2).add(arborGraph2);
 
 

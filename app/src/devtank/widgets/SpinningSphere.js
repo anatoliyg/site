@@ -4,7 +4,7 @@ define(function(require, exports, module){
 	var StateModifier 		= require('famous/modifiers/StateModifier');
 	var View            	= require('famous/core/View');
 
-	function ApborGraph(args){
+	function SpinningSphere(args){
 
 		this.defaultSize = args;
 
@@ -26,11 +26,11 @@ define(function(require, exports, module){
 		//console.log( $('.theCanvas') );
 	}
 
-	ApborGraph.prototype = Object.create(CanvasSurface.prototype);
-	ApborGraph.prototype.constructor = ApborGraph;
+	SpinningSphere.prototype = Object.create(CanvasSurface.prototype);
+	SpinningSphere.prototype.constructor = SpinningSphere;
 
 
-	ApborGraph.prototype.init = function() {
+	SpinningSphere.prototype.init = function() {
 
 		var self = this;
 
@@ -347,6 +347,6 @@ define(function(require, exports, module){
 
 	};
 
-	module.exports = ApborGraph;
+	module.exports = SpinningSphere;
 
 })
