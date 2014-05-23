@@ -1,0 +1,11 @@
+{
+  "generator-famous": {
+    "projectName": "portfolio",
+    "projectDesc": "my portfolio site",
+    "authorLogin": "t-plane",
+    "author": {
+      "name": "t-plane",
+      "email": "nu.way.productions@gmail.com"
+    }
+  }
+}
